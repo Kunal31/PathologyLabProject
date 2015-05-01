@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+setup.py
+django_tokenapi.egg-info/PKG-INFO
+django_tokenapi.egg-info/SOURCES.txt
+django_tokenapi.egg-info/dependency_links.txt
+django_tokenapi.egg-info/top_level.txt
+tokenapi/__init__.py
+tokenapi/backends.py
+tokenapi/decorators.py
+tokenapi/http.py
+tokenapi/models.py
+tokenapi/tests.py
+tokenapi/tokens.py
+tokenapi/urls.py
+tokenapi/views.py
