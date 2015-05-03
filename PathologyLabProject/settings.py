@@ -88,7 +88,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_URL = '/home/aspade/workspace/PathologyLabProject/labmanagement/static/templates/'
+STATIC_URL = '/home/aspade/workspace/PathologyLabProject/labmanagement/static/'
 
 STATICFILES_DIRS = (
      os.path.join(BASE_DIR, '../templates/css/'),

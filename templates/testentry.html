@@ -17,10 +17,10 @@
 				<a href="services.html">services</a>
 			</li>
 			<li>
-				<a href="tests.html">tests</a>
+				<a href="testentry.html">tests</a>
 			</li>
 			<li>
-				<a href="check_report.html">check test report</a>
+				<a href="checktest.html">check test report</a>
 			</li>
 			<li>
 				<a href="contact.html">contact</a>
@@ -32,7 +32,35 @@
 	</div>
 	<div id="body">
 		<div class="content">
-			<img src="images/laboratory.jpg" alt="">
+			<h2>enter Test Details</h2>
+			<form action="index.html">
+				<label for="testtype"> <span>Test Type:</span>
+					<input type="text" name="testtype" id="email">
+				</label>
+				<label for="quantity"> <span>Quantity:</span>
+					<input type="text" name="quantity" id="quantity">
+				</label>
+				<label for="color"> <span>Colour:</span>
+					<input type="text" name="first" id="firstName">
+				</label>
+				<label for="appearance"> <span>Appearance:</span>
+					<input type="text" name="appearance" id="appearance">
+				</label>
+				<label for="reaction"> <span>Reaction:</span>
+					<input type="text" name="reaction" id="reaction">
+				</label>
+				<label for="cholestrol"> <span>Cholestrol:</span>
+					<input type="text" name="cholestrol" id="cholestrol">
+				</label>
+				<label for="ldl_cholestrol"> <span>LDL Cholestrol:</span>
+					<input type="text" name="ldl_cholestrol" id="ldl_cholestrol">
+				</label>
+				<label for="triglycerides"> <span>Tryglycerides:</span>
+					<input type="text" name="triglycerides" id="triglycerides">
+				</label>
+				<input type="submit" value="" id="submit">
+			</form>
+			<!-- <img src="images/laboratory.jpg" alt="">
 			<form action="/labmanagement/create_test/" method="POST" target="_blank">
 				{% csrf_token %}
     			{% for field in testform %}
@@ -42,14 +70,13 @@
 	    			</div>
 				{% endfor %}
 				<input type="submit" value="Submit" />
-			</form>
-						
+			</form> -->
 		</div>
 	</div>
 	<div id="footer">
 		<div>
 			<p>
-				<span>2015 &copy; Sanjivani Diagnostic Center.</span><a href="#" >Terms of Service</a> | <a href="#" >Privacy Policy</a>
+				<span>2015 &copy; Illumelabs Diagnostic Center.</span><a href="#" >Terms of Service</a> | <a href="#" >Privacy Policy</a>
 			</p>
 		</div>
 	</div>

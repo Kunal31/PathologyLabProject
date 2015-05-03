@@ -462,15 +462,16 @@ body {
 	overflow: hidden;
 	padding: 10px 0;
 }
-#body .content form label span {
+#body .content form label span, #header .content form label span {
 	color: #767676;
 	display: block;
 	float: left;
 	line-height: 24px;
 	margin: 0;
+	margin-left: 7px;
 	padding: 0;
 	text-transform: capitalize;
-	width: 130px;
+	width: 78px;
 }
 #body .content form label input {
 	border: 1px solid #94acb3;
@@ -483,6 +484,19 @@ body {
 	margin: 0;
 	padding: 3px 5px;
 	width: 308px;
+}
+#header .content form label input {
+	border: 1px solid #94acb3;
+	color: #767676;
+	display: block;
+	float: left;
+	font-family: 'Conv_Ubuntu-Light';
+	font-size: 14px;
+	height: 21px;
+	margin: 0;
+	margin-right: 6px;
+	padding: 3px 5px;
+	width: 150px;
 }
 #body .content form label textarea {
 	border: 1px solid #94acb3;
@@ -498,6 +512,16 @@ body {
 	width: 528px;
 }
 #body .content form #submit {
+	background: url(../images/button-submit.png) no-repeat 0 0;
+	border: 0;
+	cursor: pointer;
+	display: block;
+	height: 38px;
+	margin: 5px 0 0 130px;
+	padding: 0;
+	width: 142px;
+}
+#header .content form #submit {
 	background: url(../images/button-submit.png) no-repeat 0 0;
 	border: 0;
 	cursor: pointer;
