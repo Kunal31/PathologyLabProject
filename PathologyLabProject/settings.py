@@ -10,8 +10,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
+BASE_DIR = os.path.dirname(__file__)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -54,6 +53,9 @@ ROOT_URLCONF = 'PathologyLabProject.urls'
 
 WSGI_APPLICATION = 'PathologyLabProject.wsgi.application'
 
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, '../templates'),
+)
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -86,4 +88,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/home/aspade/workspace/PathologyLabProject/labmanagement/static/templates/'
+
+STATICFILES_DIRS = (
+     os.path.join(BASE_DIR, '../templates/css/'),
+     os.path.join(BASE_DIR, '../templates/fonts/'),
+     os.path.join(BASE_DIR, '../templates/images/'),
+#       '/home/aspade/workspace/PathologyLabProject/templates/css',
+#       '/home/aspade/workspace/PathologyLabProject/templates/images',
+#       '/home/aspade/workspace/PathologyLabProject/templates/fonts',
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+)
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)

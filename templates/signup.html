@@ -4,59 +4,71 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Contact - Laboratory Website Template</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
 </head>
 <body>
 	<div id="header">
 		<a href="index.html" class="logo"><img src="images/logo.png" alt=""></a>
 		<ul>
-			<li>
+			<li class="selected">
 				<a href="index.html">home</a>
-			</li>
-			<li>
-				<a href="about.html">about</a>
 			</li>
 			<li>
 				<a href="services.html">services</a>
 			</li>
 			<li>
-				<a href="location.html">our locations</a>
-			</li>
-			<li class="selected">
-				<a href="contact.html">contact</a>
+				<a href="tests.html">tests</a>
 			</li>
 			<li>
-				<a href="blog.html">blog</a>
+				<a href="check_report.html">check test report</a>
+			</li>
+			<li>
+				<a href="location.html">location</a>
+			</li>
+			<li>
+				<a href="signup.html">Sign up</a>
 			</li>
 		</ul>
 	</div>
 	<div id="body">
 		<div class="content">
-			<img src="images/telephone.jpg" alt="">
-			<h2>send us a message</h2>
+			<img src="images/sign-up.jpg" alt="" style="width: 918px; height: 218px">
+			<h2>create an account</h2>
 			<form action="index.html">
+				<label for="username"> <span>User Name*</span>
+					<input type="text" name="email" id="email">
+				</label>
+				<label for="password"> <span>Password</span>
+					<input type="password" name="password" id="password">
+				</label>
 				<label for="firstName"> <span>first name*</span>
 					<input type="text" name="first" id="firstName">
 				</label>
 				<label for="lastName"> <span>last name*</span>
 					<input type="text" name="last" id="lastName">
 				</label>
-				<label for="email"> <span>email*</span>
+				<label for="contactno"> <span>contact no*</span>
+					<input type="text" name="contact" id="contactno">
+				</label>
+				<label for="email address"> <span>email address</span>
 					<input type="text" name="email" id="email">
-				</label>
-				<label for="phoneNumber"> <span>Phone Number</span>
-					<input type="text" name="phone" id="phoneNumber">
-				</label>
-				<label for="subject"> <span>subject*</span>
-					<input type="text" name="subject" id="subject">
-				</label>
-				<label for="message"> <span>message</span>
-					<textarea name="" id="message" cols="30" rows="10"></textarea>
 				</label>
 				<input type="submit" value="" id="submit">
 			</form>
+			
+			<form action="/labmanagement/create_user/" method="POST" target="_blank">
+				{% csrf_token %}
+    			{% for field in userform %}
+	    			<div class="fieldWrapper">
+	        			{{ field.label_tag}} {{ field }}
+	        			{{ field.errors }}
+	    			</div>
+				{% endfor %}
+				<input type="submit" value="Submit" />
+			</form>
+			
 		</div>
-		<div class="sidebar">
+<!-- 		<div class="sidebar">
 			<h3>contact</h3>
 			<ul>
 				<li>
@@ -69,10 +81,10 @@
 							Diagnostic Center
 						</li>
 						<li>
-							3952 Glen Falls Road
+							S V Road
 						</li>
 						<li>
-							Wayne, PA 19088
+							Andheri(E), Mumbai 460018
 						</li>
 					</ul>
 				</li>
@@ -80,7 +92,7 @@
 					<span class="phone">telephone</span>
 					<ul>
 						<li>
-							215.859.9423
+							022 26459871
 						</li>
 					</ul>
 				</li>
@@ -110,13 +122,13 @@
 				</li>
 			</ul>
 		</div>
-	</div>
+ -->	</div>
 	<div id="footer">
 		<div>
 			<p>
-				<span>2023 &copy; Sanjivani Diagnostic Center.</span><a href="#" >Terms of Service</a> | <a href="#" >Privacy Policy</a>
+				<span>2015 &copy; Sanjivani Diagnostic Center.</span><a href="#" >Terms of Service</a> | <a href="#" >Privacy Policy</a>
 			</p>
-			<ul>
+<!-- 			<ul>
 				<li id="facebook">
 					<a href="http://freewebsitetemplates.com/go/facebook/">facebook</a>
 				</li>
@@ -130,7 +142,7 @@
 					<a href="#" >rss</a>
 				</li>
 			</ul>
-		</div>
+ -->		</div>
 	</div>
 </body>
 </html>

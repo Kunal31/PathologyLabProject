@@ -38,13 +38,14 @@ class Test(models.Model):
 #    REACTION_CHOICES = ((Acidic,'Acidic'),(Basic,'Basic'),(Normal,'Normal'),)
 #    Reaction = models.CharField(max_length=1,REACTION_CHOICES)
     
+    # blood test
     reaction = models.CharField(max_length=25)                              
     cholestrol = models.FloatField(null=True,blank=True)                        # all 3 values in mg/dl
     ldl_cholestrol = models.FloatField(null=True,blank=True)
     triglycerides = models.FloatField(null=True,blank=True)
     
     #urine test
-    rbc = models.FloatField()                                                   # all 3 values in cells/HPF                                                   
+    rbc = models.FloatField(null=True,blank=True)                                                   # all 3 values in cells/HPF                                                   
     pus_cells = models.FloatField(null=True,blank=True)
     epithelial_cells = models.CharField(max_length=5,null=True,blank=True)
 

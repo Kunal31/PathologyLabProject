@@ -9,21 +9,23 @@ from django.core.exceptions import ObjectDoesNotExist
 
 def create_user(request):
     if request.method == "POST":
-        userform = forms.AccountModelForm(request.POST)
+        userform = forms.AccountForm(request.POST)
         if userform.is_valid():
             new_user = userform.save()
             return HttpResponse("saved")
         else:
             return HttpResponseServerError()
-#     else:
-#         form = AccountForm()
-    
-    return render(request,'*.html',{'userform': userform})
+    else:
+        userform = forms.AccountForm()
+        
+    resp_dict = {'userform': userform}
+    return render_to_response('signup.html',RequestContext(request,resp_dict))
 
 def create_test(request):
+    data = request.POST
     if request.method == "POST":
-        data = request.POST
-        if data.has_key('blood'):
+        
+        if request.method == "POST":
             testform = forms.BloodTestForm(request.POST)
             if testform.is_valid():
 #                 test_type = testform.cleaned_data['test_type']
@@ -36,6 +38,7 @@ def create_test(request):
 #                 triglycerides = testform.cleaned_data['triglycerides']
                 testform.save()
                 last_test = models.Test.objects.latest('id')
+                print 'request.user',request.user
                 usertest = models.UserTest.objects.create(request.user,last_test)
                 return HttpResponse("saved")
         elif data.has_key('urine'):
@@ -53,7 +56,7 @@ def create_test(request):
                 usertest = models.UserTest.objects.create(request.user,last_test)
                 return HttpResponse("saved")
         elif data.has_key('saliva'):
-            test_form = forms.SalivaTestForm(request.POST)
+            testform = forms.SalivaTestForm(request.POST)
             if testform.is_valid():
 #                 test_type = testform.cleaned_data['test_type']
 #                 quantity = testform.cleaned_data['quantity']
@@ -69,11 +72,12 @@ def create_test(request):
                 return HttpResponse("saved")
     else:
         testform = BloodTestForm()
-    return render(request,'*.html',{'userform': testform})
+    
+    resp_dict = {'testform':testform}
+    return render_to_response('testentry.html',RequestContext(request,resp_dict))
 
 def get_test_status(request):
     if request.method == 'POST':
-        #user = models.User.objects.get(Q(username = request.POST.get("username")) | Q(username = request.POST.get("username")))
         try:   
             tests = models.Test.objects.filter(Q(patient_id = request.user.id) | Q(id = request.POST.get('receipt_no')))
         except ObjectDoesNotExist:

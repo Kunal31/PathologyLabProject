@@ -41,8 +41,7 @@ body {
 #header ul li {
 	float: left;
 	list-style: none;
-	margin: 0 0 0 116px;
-	;
+	margin: 0 0 0 111px;
 	padding: 0;
 }
 #header ul li:first-child {
@@ -139,7 +138,7 @@ body {
 	color: #767676;
 	line-height: 30px;
 	margin: 0;
-	padding: 20px 0;
+	padding: 10px 0;
 }
 #featured div .article p a {
 	color: #767676;
@@ -211,6 +210,8 @@ body {
 }
 #featured div ul li img {
 	display: block;
+	width: 218px;
+	height: 222px;
 }
 #body {
 	background: url(../images/bg-content.jpg) repeat;
@@ -359,6 +360,8 @@ body {
 #body ul li .figure img {
 	border: 1px solid #fff;
 	display: block;
+	width: 209px;
+	height: 188px;
 }
 #body ul li .article {
 	float: left;
